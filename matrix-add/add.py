@@ -1,12 +1,10 @@
 # Author: Jordan Spangenberg
 # Email: jordan.spang at gmail dot com
-# 
 
+# Add two x by y matrices
 def add(*argv):
     if len(argv) < 1:
         raise ValueError('add() takes at least one argument')
-    #if not all(matrix is type("class 'list'") for matrix in argv):
-        #raise TypeError('Function accepts n number of x by y int arrays')
     if not all(len(col) == len(argv[0]) for col in argv):
         raise ValueError('Matrices are not uniform')
     for i in range(len(argv)):
